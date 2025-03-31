@@ -1,0 +1,611 @@
+/*********************************
+ Lists
+**********************************/
+@use "../modules" as m;
+
+.list-01{
+    @include m.flex($ai:flex-start,$gap:m.percentVal(40, 1500),$jc:center,$fw:wrap);
+    counter-reset: list;
+    @include m.mqMax(1360px){
+      gap:30px;
+    }
+  &__item{
+    // @include m.flex($ai: center,$fd: column, $jc:flex-start);
+    max-width: m.percentVal(322, 1500);
+    position: relative;
+    counter-increment: list;
+    &:nth-child(3){
+      margin-top:50px;
+    }
+    &:nth-child(2){
+      margin-top:100px;
+    }
+    &:first-child{
+      margin-top:150px;
+    }
+    @include m.mqMax(1360px){
+      max-width: 322px;
+    }
+    @include m.mqMax(576px){
+      max-width: unset;
+      width: 100%;
+      &:nth-child(3){
+        margin-top:unset;
+      }
+      &:nth-child(2){
+        margin-top:unset;
+      }
+      &:first-child{
+        margin-top:40px;
+      }
+    }
+    &:hover{
+      .img__main{
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  &__innerCon{
+    @include m.flex($ai:center,$fd: column, $jc:center);
+  }
+  &__img{
+    aspect-ratio: 322/322;
+    width: 322px;
+    border-radius: 7px;
+    @include m.mqMax{
+      width: 100%;
+      max-width: 484px;
+      aspect-ratio: 484/482;
+    }
+    .img__main{
+      @include m.transition(transform);
+    }
+  }
+
+  &__ttl{
+    margin-block:25px;
+    font-size: 2.4rem;
+    // color:m.$blue;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__txt{
+   text-align: justify;
+  }
+}
+
+
+.list-accordion{
+  margin-top:60px;
+  &__item{
+    // background-color: m.$blue04;
+    // border-radius: 24px;
+    position:relative;
+    &:nth-child(n+2){
+      margin-top: 57px;
+    }
+  }
+  &__step{
+    position: absolute;
+    z-index:1;
+    width: 106px;
+    height: 43px;
+    top:-32px;
+    left:-60px;
+    @include m.mqMax{
+      left: 0;
+      top:-40px;
+      width: 72px;
+    }
+  }
+  &__link{
+    display:block;
+    background-color: m.$blue04;
+    border-radius: 24px;
+    &--blue02{
+      background: rgb(29,94,196);
+      background: linear-gradient(270deg, rgba(29,94,196,1) 0%, rgba(39,107,214,1) 100%);
+    }
+    &--blue03{
+      background: rgb(13,209,193);
+      background: linear-gradient(270deg, rgba(13,209,193,1) 0%, rgba(5,196,181,1) 100%);
+    }
+  }
+  &__wrap{
+    color:m.$white;
+    @include m.flex($jc:space-between,$gap:10px,$ai:center);
+    padding: 25px 25px 19px 33px;
+    &-ttl{
+      font-size: 4.2rem;
+      font-family: m.$font-hiragino;
+      font-weight: 600;
+      @include m.mqMax(576px){
+        font-size: 2.6rem;
+      }
+    }
+    &-txt01,&-txt02{
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: m.calculate_lh(15,26);
+      @include m.mqMax(576px){
+        font-size: 1rem;
+      }
+    }
+    &-txt02{
+      font-weight: 500;
+    }
+    &-price{
+      font-size:2.4rem;
+      font-weight: 600;
+      // text-align: center;
+      padding:5px 10px;
+      // width: 100%;
+      // max-width: 130px;
+      border:2px solid m.$white;
+      border-radius: 10px ;
+      @include m.mqMax(576px){
+        font-size: 1.5rem;
+      }
+    }
+
+  
+  }
+  &__read{
+    background-color: #48AFDB;
+    text-align: center;
+    color:m.$white;
+    border-radius: 0 0 24px 24px;
+    padding-block: 12px;
+    @include m.mqMax(576px){
+      padding-block: 9px;
+    }
+    .is-active &{
+      border-radius: 0;
+    }
+    &-txt{
+      font-size:1.7rem;
+      letter-spacing: .2em;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      width: 100%;
+      max-width: 172px;
+      margin:0 auto;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top:50%;
+        right:0;
+        transform: translateY(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 11px solid m.$white;
+        border-bottom: 0;
+      }
+      @include m.mqMax(576px){
+        font-size: 1rem;
+      }
+    }
+    &--blue02{
+      background-color: #457ED7;
+    }
+    &--blue03{
+      background-color: #38DDCE;
+    }
+  }
+  &__content{
+    background-color: #F8F8F8;
+    padding-bottom: 50px;
+    border-radius: 0 0 21px 21px ;
+    @include m.mqMax{
+      padding-bottom: unset;
+
+    }
+  }
+  &__inner{
+    @include m.flex($gap:10px, $jc:space-between, $fw:wrap);
+    padding: 53px 23px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background:#0D3057;
+    }
+
+    @include m.mqMax{
+      flex-direction: column;
+      &::before{
+        content: unset;
+      }
+    }
+
+    &-info{
+      width: calc(50% - 27px);
+      @include m.mqMax{
+        width: 100%;
+        padding-bottom: 38px;
+        border-bottom: 1px solid rgba(#0D3057, .15);
+      }
+    }
+    &-info01{
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(#0D3057, .15);
+    }
+    &-info02{
+      margin-bottom: 82px;
+      border-bottom: 1px solid rgba(#0D3057, .15);
+      @include m.mqMax{
+        margin-bottom: unset;
+        order:2;
+      }
+    }
+    &-info04{
+      margin-top: -80px;
+      @include m.mqMax{
+        margin-top: unset;
+        order:3;
+      }
+    }
+   
+    &-ttl{
+      color:m.$blue05;
+      font-size: 2rem;
+      line-height: m.calculate_lh(20,51);
+      font-weight: 500;
+      &--blue02{
+        color:m.$blue06;
+      }
+      &--blue03{
+        color:m.$cyan;
+      }
+    }
+    &-txt,&-bullet{
+      font-size: 1.4rem;
+      line-height: m.calculate_lh(14,30);
+      text-align: justify;
+    }
+    &-txt02{
+      font-size: 1rem;
+      margin-top: 16px;
+      @include m.flex();
+    }
+    &-bullet{
+      padding-left: 12px;
+      position: relative;
+      &03{
+        font-size: 1.2rem;
+      }
+      &-wrap03{
+        column-count: 2;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        width:6px;
+        height: 6px;
+        top: 14px;
+        left:0;
+        border-radius: 100%;
+        background: m.$blue05;
+      }
+      &--blue02{
+        &::before{
+        background: m.$blue06;
+          
+        }
+      }
+      &--blue03{
+        &::before{
+          background: m.$cyan;
+      }
+  }
+}
+  &-triangle{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 11px solid m.$blue05;
+    border-bottom: 0;
+    margin:18px auto;
+    
+    &--blue02{
+    border-top: 11px solid m.$blue06;
+
+    }
+    &--blue03{
+      border-top: 11px solid m.$cyan;
+
+    }
+  }
+  }
+
+}
+
+
+.list-card{
+  @include m.flex($gap:45px, $fw:wrap, $jc:center);
+  &--02{
+    margin-top: 215px;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  @include m.mqMax{
+    margin-top: 100px;
+    &--02{
+      background-color: m.$white02;
+      margin-inline: -40px;
+      justify-content: center;
+      padding:60px 40px;
+
+    }
+  }
+  &__link{
+    &--02{
+      @include m.flex($gap:40px,$ai:flex-start, $jc:flex-start);
+      @include m.mqMax{
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+  &__item{
+    @include m.mqMax{
+      width: 100%;
+    }
+  }
+  &__img{
+    aspect-ratio: 328/169;
+    width: 100%;
+    border-radius: 9px;
+    &-txt{
+      color:m.$white;
+      padding:5px 20px;
+      max-width: 160px;
+      border-bottom-left-radius: 9px;
+      margin-left: auto;
+      background: rgb(38,106,213);
+      background: linear-gradient(90deg, rgba(38,106,213,1) 0%, rgba(69,150,222,1) 74%, rgba(95,185,229,1) 100%);
+    }
+    &--02{
+      width: 328px;
+    }
+    &--03{
+      aspect-ratio: 307/206;
+      width: 307px;
+      border-radius: 18px;
+    }
+    @include m.mqMax{
+      width: 100%;
+    }
+  }
+  &__date{
+    font-size: 1.2rem;
+    line-height: m.calculate_lh(12,20);
+    font-weight: 400;
+    &--02{
+      font-size: 1.5rem;
+      color: m.$gray05;
+    }
+    @include m.mqMax{
+      font-size: 2.5rem;
+      order:1;
+    }
+  }
+  &__ttl{
+    font-size: 1.6rem;
+    font-weight: 600;
+    &--02{
+      font-size: 2.6rem;
+    }
+    &--03{
+      font-size: 2rem;
+    }
+    @include m.mqMax{
+      font-size: 2.9rem;
+      order:2;
+    }
+  }
+  &__ttl-01{
+    font-size: 1.6rem;
+    font-weight: 600;
+    
+  }
+  &__wrap{
+    @include m.flex($jc:flex-start, $gap:5px);
+    margin-top: 7px;
+    @include m.mqMax{
+      order:3;
+    }
+  }
+  &__cat{
+    font-size: 1rem;
+    font-weight: 300;
+    color: m.$gray06;
+    border: 1px solid rgba(m.$gray04, 0.5);
+    border-radius:16px;
+    padding: 8px 15px;
+    @include m.mqMax{
+      font-size: 1.4rem;
+    }
+  }
+  &__tag{
+    color: m.$blue03;
+    font-size: 1.2rem;
+    @include m.mqMax{
+      font-size: 1.7rem;
+    }
+  }
+  &__info{
+    @include m.flex($fd:column,$gap:10px);
+    @include m.mqMax{
+    }
+  }
+}
+// .list-card02{
+
+//   &__link{
+//     @include m.flex($gap:45px);
+//   }
+//   &__img{
+//     aspect-ratio: 328/169;
+//     width: 328px;
+//     border-radius: 9px;
+//     &-txt{
+//       color:m.$white;
+//       padding:5px 20px;
+//       max-width: 160px;
+//       border-bottom-left-radius: 9px;
+//       margin-left: auto;
+//       background: rgb(38,106,213);
+//       background: linear-gradient(90deg, rgba(38,106,213,1) 0%, rgba(69,150,222,1) 74%, rgba(95,185,229,1) 100%);
+//     }
+//   }
+// }
+
+.list-02{
+  counter-reset: number;
+  max-width: 300px;
+  margin-top: 10px;
+  @include m.mqMax(576px){
+    max-width: unset;
+    width: 100%;
+  }
+  &__item{
+    counter-increment: number;
+    &:nth-child(n+2){
+      margin-top: 10px;
+    }
+    @include m.mqMax(576px){
+      width: 100%;
+    }
+  }
+
+  &__link{
+    @include m.flex($ai:flex-start,$gap:8px);
+    width: 100%;
+    // max-width: 300px;
+    @include m.mqMax(576px){
+      max-width: unset;
+    }
+  }
+  &__wrap{
+    width: 100%;
+    max-width: 120px;
+  }
+  &__img{
+    aspect-ratio: 173/90;
+    width: 100%;
+    &::before{
+      content: counter(number);
+      position: absolute;
+      color: m.$black;
+      font-size: 1rem;
+      font-weight: 600;
+      width: 19px;
+      height: 19px;
+      text-align: center;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      padding: 5px 7px;
+      background: #939393;
+    }
+    @include m.mqMax(576px){
+      aspect-ratio: 263/135;
+      width: 263px;
+    }
+  }
+ 
+}
+
+.list-page{
+  margin-top: 40px;
+  &__item{
+    &:nth-child(n+2){
+      margin-top: 40px;
+    }
+  }
+  &__info{
+    max-width: 850px;
+    width: 100%;
+  }
+  &__img{
+    aspect-ratio: 836/443;
+    width: 100%;
+  }
+  &__wrap{
+    margin-top: 45px;
+  }
+  &__txt{
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: m.calculate_lh(28,39);
+    @include m.mqMax{
+      font-size: 2rem;
+    }
+  }
+}
+
+.list-contact{
+  &__item{
+    @include m.flex($ai:center, $jc:flex-start,$gap:15px);
+    position: relative;
+    padding:10px;
+    &:before,&::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+    }
+    &::before{
+      width: 100%;
+      background-color: #CCCCCC;
+    }
+    &::after{
+      width: 221px;
+      left: 0;
+      background-color:m.$blue ;
+      @include m.mqMax(576px){
+        width: 84px;
+      }
+    }
+    &:nth-child(n+2){
+      margin-top: 14px;
+    }
+  }
+  &__ttl{
+    font-size:1.8rem;
+    max-width: 217px;
+    width: 100%;
+    @include m.mqMax(576px){
+      font-size: 1.4rem;
+      max-width: 84px;
+    }
+  }
+  &__wrap{
+    flex:1;
+  }
+  &__txt{
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-family: m.$font-hiragino;
+    line-height: m.calculate_lh(16,27);
+    @include m.mqMax(576px){
+      font-size: 1.4rem;
+    }
+  }
+}

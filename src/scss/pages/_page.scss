@@ -1,0 +1,327 @@
+/*********************************
+ Page (Global)
+**********************************/
+@use "../modules" as m;
+
+.lower {
+  &__wrap {
+    &:empty {
+      min-height: 100vh;
+    }
+  }
+}
+
+/* Banner */
+.banner {
+  margin: 100px 0 0;
+  @include m.mqMax {
+    margin: 80px 0 0;
+  }
+
+  &__wrap {
+    @include m.flex($ai: center);
+    min-height: 300px;
+    background: m.$gray;
+  }
+}
+
+.apply-bnr{
+  margin-top:40px;
+  @include m.mqMax{
+    margin-top:80px;
+  }
+  .container{
+    @include m.mqMax{
+      width: unset;
+      max-width: unset;
+      margin:unset;
+      padding:unset;
+    }
+  }
+  &__img02{
+    width: 100%;
+    max-width: 360px;
+    margin-left: -90px;
+    margin-bottom: -47px;
+    // margin-left: m.percentVal(-110, 1120);
+    @include m.mqMax{
+      margin-left: 10px;
+      margin-bottom: -10px;
+
+    }
+  }
+  &__info{
+    background: m.$white02;
+    width: 100%;
+    max-width: 1138px;
+    padding: 25px 30px;
+    border-radius: 27px;
+    margin: 0 auto;
+    @include m.mqMax{
+      border-radius: unset;
+      padding:20px 0;
+    }
+  }
+  &__img-sp{
+    @include m.mqMin(768px){
+      display: none;
+    }
+  }
+  &__img-pc{
+    @include m.mqMax(767px){
+      display: none;
+    }
+  }
+  &__img-wrap{
+    position: relative;
+    border-radius: 27px;
+    @include m.mqMax(576px){
+      border-radius: unset;
+      aspect-ratio: 538/577;
+      width: 100%;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      background: rgb(39,105,213);
+      background: linear-gradient(90deg, rgba(39,105,213,1) 0%, rgba(85,171,227,1) 13%, rgba(77,159,224,0.4) 22%, rgba(96,184,229,0.18) 41%, rgba(100,190,230,0.13) 54%, rgba(105,197,231,0.07) 64%, rgba(111,205,233,0) 73%, rgba(111,205,233,0) 81%);
+      z-index: 1;
+    }
+  }
+  &__content{
+    position: relative;
+    z-index: 2;
+    padding:20px;
+    @include m.mqMax{
+      @include m.flex($fd:column);
+    }
+  }
+  &__logo{
+    max-width: 161px;
+    @include m.mqMax{
+      max-width: 147px;
+      order:3;
+      margin-top:100px;
+    }
+    @include m.mqMax(576px){
+      margin-top:203px;
+    }
+  }
+  &__ttl{
+    font-size: 2.4rem;
+    color: m.$white;
+    margin-top: 41px;
+    font-weight: 700;
+    @include m.mqMax{
+      order:4;
+      margin-top: 10px;
+      font-size: 1.4rem;
+    }
+  }
+  &__apply{
+    font-family: m.$font-hiragino;
+    font-style: italic;
+    font-size: 7rem;
+    font-weight: 700;
+    color:m.$white;
+    margin-top: 20px;
+    @include m.mqMax{
+      order:1;
+      margin-top: unset;
+      font-size: 5rem;
+    }
+  }
+  &__wrap{
+    @include m.flex($ai:flex-start, $jc:space-between);
+    @include m.mqMax{
+      position: relative;
+      z-index: -1;
+      background-color:#276BD6 ;
+      max-width: 432px;
+      width: 100%;
+      order:4;
+      border-radius:40px ;
+      margin: 20px 0 20px auto;
+      justify-content: center;
+      padding:15px;
+    }
+  }
+  
+  &__txt{
+    font-size: 2.1rem;
+    font-weight: 400;
+    color:m.$white;
+    @include m.mqMax{
+      order:2;
+    }
+  }
+  &__link{
+    @include m.flex($ai:center, $gap:20px);
+    &-txt{
+      background-color:m.$blue ;
+      border-radius: 13px;
+      padding: 10px 75px;
+      font-size: 2.4rem;
+      color: m.$white;
+      border:1px solid m.$blue;
+      @include m.mqMin(992px){
+        @include m.transition(background,color);
+        &:hover{
+          background-color: m.$white;
+          color: m.$blue;
+        }
+      }
+      @include m.mqMax{
+        background-color:unset ;
+        padding: unset;
+      }
+    }
+  }
+}
+
+.lp-bnr{
+  @include m.mqMin{
+   //Remove as needed
+    margin-top: 100px;
+  }
+  &__img{
+    aspect-ratio: 769/448;
+    width: 100%;
+    &::before{
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgb(111,205,233);
+      background: linear-gradient(311deg, rgba(111,205,233,0.1) 0%, rgba(77,159,224,0.1) 34%, rgba(73,154,223,0.1) 35%, rgba(39,107,214,0.1) 85%, rgba(39,105,213,0.1) 100%);
+    }
+    &-txt{
+      position: absolute;
+      width: 100%;
+      max-width: 594px;
+      bottom: 0;
+      right: 0;
+      @include m.mqMax{
+        max-width: unset;
+      }
+    }
+    @include m.mqMax{
+      aspect-ratio: 270/504;
+    }
+  }
+  &__img02{
+    aspect-ratio: 1500/448;
+    width: 100%;
+    @include m.mqMax{
+      aspect-ratio: 540/459;
+    }
+  }
+  &__wrap-img{
+    @include m.flex($ai:center, $jc:center);
+  }
+  &__txt,&__ttl{
+    position: absolute;
+  }
+  &__txt{
+    top:30px;
+    left:28px;
+    font-size: 2.1rem;
+    color: m.$white;
+    @include m.mqMax{
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  &__ttl{
+    top:50%;
+    left:m.percentVal(115,1500);
+    transform: translateY(-50%);
+    color: m.$white;
+    font-size: 7rem;
+    font-family: m.$font-hiragino;
+    span{
+      font-size: 2.1rem;
+      display: block;
+    }
+  }
+}
+
+.pagination{
+  @include m.flex($gap:11px,$jc:center,$ai:center);
+  margin-top: 100px;
+}
+
+.page-numbers{
+  color: #959595;
+  font-size: 1.8rem;
+  border-radius: 100px;
+  background-color: rgba(#E0E0E0, .3);
+  padding:10px;
+  max-width: 47px;
+  width: 100%;
+  text-align: center;
+  @include m.transition(background-color,color);
+}
+ 
+.is-active,
+.page-numbers:hover{
+  color: #DBDBDB;
+  background-color: m.$blue;
+}
+
+.page-arrow{
+  max-width: 47px;
+  width: 100%;
+}
+
+.lp-page{
+  padding-inline: m.percentVal(235,1500) 14px ;
+  @include m.mqMax{
+    padding-inline: 42px;
+  }
+  &__content{
+    @include m.flex($ai:flex-start,$jc:space-between,$gap:135px);
+    @include m.mqMax{
+      flex-wrap: wrap;
+      gap:100px;
+    }
+  }
+  .ttl-02{
+    margin-top: unset;
+  }
+  &__menu{
+    width: 100%;
+    max-width: 300px;
+    @include m.mqMax(767px){
+      max-width: unset;
+    }
+    &-articles{
+      margin-top: 160px;
+      @include m.mqMax{
+        margin-top: unset;
+      }
+    }
+    &-reco{
+      margin-top: 67px;
+    }
+    &-ttl{
+      font-size: 1.6rem;
+      padding-bottom: 10px;
+      border-bottom: 1px solid m.$blue;
+    }
+  }
+  &__info{
+    width: 100%;
+    max-width: 850px;
+   
+  }
+ 
+}

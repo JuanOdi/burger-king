@@ -1,0 +1,22 @@
+script(src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous")
+
+if isAOS
+    script(src="https://unpkg.com/aos@next/dist/aos.js")
+    script
+        | AOS.init({
+        |     disable: window.innerWidth < 992,
+        |     duration: 800,
+        |     easing: 'ease-out-quart',
+        |     once: true,
+        | });
+
+if isSwiper
+    script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+
+//- if currentPage == 'home'
+//-     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js")
+//-     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js")
+//-     script(src=`${assetsPath}/js/lib/gsap.js`)
+
+script(src=`${assetsPath}/js/bundle.js`)
+//- script(src=`${assetsPath}/js/lib/scripts.js`)

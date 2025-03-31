@@ -1,0 +1,55 @@
+//- META INFORMATION
+- const page_title = 'LCP'
+- const relativePath = '../..'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'Voice'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+   
+
+html(lang="ja")
+    head
+        include ../_inc/_system/_head.pug
+
+    body
+        include ../_inc/_blocks/_header.pug
+
+        main.main
+
+            include ../_inc/_blocks/_lp-bnr.pug
+            
+            section.voice 
+                .container
+                    .ttl-01.hidden-pc
+                        h2.ttl-01__ttl Voice
+                        p.ttl-01__txt 受講生の声
+                    ul.list-card 
+                        - for (let i = 0; i < 9; i++)
+                            li.list-card__item 
+                                a.list-card__link(href="#")
+                                    .list-card__img.img
+                                        p.list-card__img-txt ？？？？
+                                        img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                    p.list-card__date ？？？？？？？？
+                                    h2.list-card__ttl Lorem ipsum dolor sit amet
+                                    .list-card__wrap
+                                        p.list-card__cat ？？？？
+                                        p.list-card__cat ？？？？
+                                        p.list-card__cat ？？
+                    .pagination 
+                        a.page-numbers.is-active(href="#") 1
+                        a.page-numbers(href="#") 2
+                        a.page-arrow(href="#") 
+                            img(src=`${assetsPath}/images/common/pagination-arrow.png`, alt="")
+        include ../_inc/_blocks/_footer.pug
+        include ../_inc/_system/_foot.pug

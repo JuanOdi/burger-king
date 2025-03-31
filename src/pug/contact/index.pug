@@ -1,0 +1,111 @@
+//- META INFORMATION
+- const page_title = 'LCP'
+- const relativePath = '../..'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'contact'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+    const contactData =[
+        {
+            ttl:"サービス名/販売業社名",
+            txt : `LCP(Life Coaching Partners) ／ 株式会社NATURE GATE`
+        },
+        {
+            ttl:"代表者名称",
+            txt : `森 裕亮`
+        },
+        {
+            ttl:"事業内容",
+            txt : `コーチングサービス、健康食料品・スポーツ栄養サプリメント等のOEM・ODM、 企画、製造、卸、<br>マーケティング、販売、食品原料の輸出入、メディア運営等 `
+        },
+         {
+            ttl:"事業所在地",
+            txt : `運営事務局 <br>〒107-0052 <br> 東京都港区赤坂4-5-21 バルミー赤坂607`
+        },
+         {
+            ttl:"事業所連絡先",
+            txt : `メールアドレス：info@alphadrive-bf.com<br>電話番号：03-5561-7525`
+        },
+         {
+            ttl:"営業時間",
+            txt : `10:00〜19:00<br>定休日：土日祝日・年末年始`
+        },
+        {
+            ttl:"販売価格",
+            txt : `販売価格は商品ごとに記載しております<br>※サービス受講時やセッションを受ける際に必要となる通信費・電話代は別途ご負担ください `
+        },
+         {
+            ttl:"お支払い方法",
+            txt : `銀行振込またはクレジットカード決済をご利用いただけます`
+        },
+         {
+            ttl:"お支払いのタイミング",
+            txt : 
+                `
+                    クレジットカード決済は、商品注文後に送信する決済リンクよりすぐにお支払いいただきます<br>
+                    銀行振込は商品注文後１週間以内(商品注文後に送信されるメールにて記載)<br>
+                    ※代金の支払い期限を過ぎた場合、各サービスの受講契約は当然に解除されるものとします<br>
+                    ※振込先は東京三菱UFJ銀行の指定口座です。口座番号にお間違えのないようご確認ください<br>
+                    ※振り込み手数料はご購入者さまご負担となります。振り込み手数料はご利用の金融機関によって<br>
+                    　異なりますのでご注意ください 
+                `
+        },
+         {
+            ttl:"商品の提供時期",
+            txt : 
+                `
+                    お支払い確認後、利用者が選択された受講日に商品を提供いたします<br>
+                    ※各種コースに応じた受講料の支払い確認後、所定の連絡手段にて日程調整を行います<br>
+                    ※支払い確認後、サービス利用に必要となるシステムへのアクセス情報を所定の連絡手段にて共有　します
+                `
+        },
+        {
+            ttl:"返品・解約について",
+            txt : `原則として、返金・キャンセルはお受け致しません <br>※詳細は「サービス利用規約」をご確認ください `
+        },
+    ]
+   
+html(lang="ja")
+    head
+        include ../_inc/_system/_head.pug
+
+    body
+        include ../_inc/_blocks/_header.pug
+
+        main.main.contact
+
+            .lp-bnr 
+                .lp-bnr__info.relative
+                    .lp-bnr__img02.img 
+                        img.img__main.hidden-sp(src = `${assetsPath}/images/banner/lp-bnr_contact.jpg`)
+                        img.img__main.hiddep-pc(src = `${assetsPath}/images/banner/lp-bnr_contact-sp.jpg`)
+                    p.lp-bnr__txt 人生は一度きり。「もしも」はない。
+                    h2.lp-bnr__ttl.hidden-sp 特定商法取引法に基づく表記
+                    img.lp-bnr__img-txt(src = `${assetsPath}/images/banner/lp-bnr_imgtxt.png`)
+        
+            
+            section.contact__info
+                .container
+                    ul.list-contact 
+                        each item in contactData
+                            li.list-contact__item 
+                                h2.list-contact__ttl #{item.ttl}
+                                .list-contact__wrap
+                                    p.list-contact__txt !{item.txt}
+                        
+
+                
+        
+        
+        include ../_inc/_blocks/_footer.pug
+        include ../_inc/_system/_foot.pug

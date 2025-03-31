@@ -1,0 +1,64 @@
+- const siteTitle = 'LCP'
+    if page_title==siteTitle
+        title #{siteTitle}
+    else
+        title #{page_title} | #{siteTitle}
+
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+meta(name="format-detection" content="telephone=no")
+meta(name="viewport", content="width=device-width, user-scalable=1, initial-scale=1, viewport-fit=cover")
+meta(name="keywords" content=`${meta_keywords}`)
+meta(name="description" content=`${meta_description}`)
+meta(property="og:title" content=`${meta_title}`)
+meta(property="og:type" content="website")
+meta(property="og:description" content=`${meta_description}`)
+meta(property="og:url" content=`${meta_og_url}`)
+meta(property="og:image" content=`${assetsPath}/images/_etc/ogp.jpg`)
+meta(property="fb:app_id" content="XXXXXXXXXXXXXXXX")
+meta(name="twitter:card" content="summary")
+meta(name="twitter:site" content="@XXXXX")
+meta(name="twitter:creator" content="@XXXXX")
+meta(name="twitter:image:src" content=`${assetsPath}/images/_etc/ogp.jpg`)
+
+//- FontAwesome
+link(rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" media="all")
+
+//- Adobe Fonts
+script.
+  (function(d) {
+    var config = {
+      kitId: 'fhr8hcd',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+//- <script>
+//-   (function(d) {
+//-     var config = {
+//-       kitId: 'fhr8hcd',
+//-       scriptTimeout: 3000,
+//-       async: true
+//-     },
+//-     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+//-   })(document);
+//- </script>
+
+//- Google Fonts
+link(rel="preconnect" href="https://fonts.googleapis.com")
+link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap")
+
+//- CSS
+
+if isAOS
+    link(rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+
+if isSwiper
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
+//- if isGsap 
+//-     link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js")
+
+link(rel="stylesheet" media="print, screen" href=`${assetsPath}/css/style.css`)

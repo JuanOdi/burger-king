@@ -1,0 +1,67 @@
+-
+    const headerMenu = [
+        { name: 'Top', href: `${relativePath}/` },
+        { name: 'About', href: "#" },
+        { name: 'Benefits', href: "#" },
+        { name: 'Essence', href: "#" },
+        { name: 'Voice', href: "#" },
+        { name: 'Strength', href: "#" },
+        { name: 'Blog', href: "#" },
+        { name: 'Program', href: "#" },
+        { name: 'Course', href: "#" },
+        { name: 'FAQ', href: "#" },
+        { name: 'まずは無料体験に申し込む', href: "#" },
+    ]
+    const headerSp = [
+        {
+            ttl: 'Menu',
+            menuItem:[
+                { name: 'About us', href: `${relativePath}/` },
+                { name: 'コーチングを学ぶことによる効果', href: "#" },
+                { name: 'コーチングとは何か？', href: "#" },
+                { name: 'コーチングが課題解決するもの', href: "#" },
+                { name: '受講生の声', href: "#" },
+                { name: 'ブログ記事', href: "#" },
+                { name: 'プログラム概要と成長ステップ', href: "#" },
+                { name: 'コースと受講料金', href: "#" },
+                { name: 'よくある質問', href: "#" },
+            ]
+        },
+        {
+            ttl: 'INFORMATION & RAW',
+            menuItem:[
+                { name: '会社概要', href: `${relativePath}/` },
+                { name: 'プライバシーポリシー', href: "#" },
+                { name: 'サービス利用規約', href: "#" },
+                { name: '特定商取引法に基づく表示', href: "#" },
+                { name: 'お問い合わせ', href: "#" },
+            ]
+        }
+    ]
+
+header.header
+    a.header__home.block(href=`${relativePath}/`)
+        img.header__logo(src=`${assetsPath}/images/common/logo.png` alt='')
+
+    nav.header__nav
+        a.header__home-sp.block.hidden-pc(href=`${relativePath}/`)
+            img.header__logo(src=`${assetsPath}/images/common/header_logo-sp.png` alt='')
+        if headerMenu.length > 0
+            ul.header__menu.header-menu.hidden-sp
+                each item, id in headerMenu
+                    - var strID = String(id + 1).padStart(2, '0')
+                    li.header-menu__item(class=`header-menu__item-${strID}`)
+                        a.header-menu__link(class=`header-menu__link-${strID}`)(href=`${item.href}`) #{item.name}
+        if headerSp.length > 0
+            ul.header__sp-menu.header-sp-menu.hidden-pc
+                each item, id in headerSp
+                    - var strID = String(id + 1).padStart(2, '0')
+                    li.header-sp-menu__item(class=`header-sp-menu__item-${strID}`)
+                        h2.header-sp-menu__ttl #{item.ttl}
+                        if item.menuItem.length > 0
+                            each menuItem in item.menuItem
+                                a.header-sp-menu__link(href=menuItem.href) #{menuItem.name}
+        include ./_header-bnr-sp.pug
+    .header-bars__wrap.hidden-pc
+        .header__bars.header-bars.hidden-pc.js-menu-toggle
+            span.header-bars__middle

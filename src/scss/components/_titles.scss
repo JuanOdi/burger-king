@@ -1,0 +1,66 @@
+/*********************************
+ Titles
+**********************************/
+@use "../modules" as m;
+
+.ttl-01{
+    padding-left: 50px;
+    max-width: 600px;
+    @include m.mqMax{
+      padding-left: unset;
+    }
+  &__ttl{
+    // color:#aa987b;
+    background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 7rem;
+    font-weight: 600;
+    font-family: m.$font-hiragino;
+    letter-spacing: .04em;
+    line-height: m.calculate_lh(70,131);
+    &--white{
+      color:m.$white;
+    }
+  }
+  &__txt{
+    margin-top:-28px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: .6;
+    &--white{
+      color:m.$white;
+    }
+  }
+  &--right{
+    margin-left: auto;
+    padding-left: unset;
+    @include m.mqMax{
+      margin-left: unset;
+      padding-left: 20px;
+    }
+  }
+  &--left{
+    margin-right: auto;
+    padding-left: m.percentVal(100,1190);
+
+  }
+  &--center{
+    padding-left: unset;
+    max-width: unset;
+    text-align: center;
+  }
+ 
+}
+
+.ttl-02{
+  margin-top: 100px; //remove as needed
+  &__ttl{
+    font-size: 4.1rem;
+    font-weight: 500;
+    @include m.mqMax{
+      font-size: 3.1rem;
+    }
+  }
+}

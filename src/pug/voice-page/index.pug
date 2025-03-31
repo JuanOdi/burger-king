@@ -1,0 +1,85 @@
+//- META INFORMATION
+- const page_title = 'LCP'
+- const relativePath = '../..'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'voice-page'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+   
+html(lang="ja")
+    head
+        include ../_inc/_system/_head.pug
+
+    body
+        include ../_inc/_blocks/_header.pug
+
+        main.main
+
+            include ../_inc/_blocks/_lp-bnr.pug
+            
+            section.voice-page
+                .lp-page
+                    .lp-page__content
+                        .lp-page__info
+                            .ttl-02 
+                                h2.ttl-02__ttl Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, incidunt. Porro quidem maiores
+                            ul.list-page
+                                - for(var i=0; i<3; i++)
+                                    li.list-page__item
+                                        .list-page__img.img 
+                                            img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                        .list-page__wrap
+                                            p.list-page__txt 
+                                                | Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, incidunt. Porro quidem maiores, possimus voluptatibus accusantium nemo placeat neque ea 
+                        .lp-page__menu 
+                            .lp-page__menu-articles
+                                h3.lp-page__menu-ttl 人気記事
+                                ul.list-02 
+                                    - for(var i=0; i<5; i++)
+                                        li.list-02__item
+                                            a.list-02__link(href="#") 
+                                                .list-02__img.img 
+                                                    img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                                .list-02__wrap
+                                                    p.list-02__ttl Lorem ipsum dolor
+                            .lp-page__menu-reco
+                                h3.lp-page__menu-ttl おすすめ記事
+                                ul.list-02 
+                                    - for(var i=0; i<5; i++)
+                                        li.list-02__item
+                                            a.list-02__link(href="#") 
+                                                .list-02__img.img 
+                                                    img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                                .list-02__wrap
+                                                    p.list-02__ttl Lorem ipsum dolor
+                                        
+                    ul.list-card.list-card--02
+                        - for( var i=0; i<3; i++ )
+                            li.list-card__item.list-card__item--03
+                                a.list-card__link.list-card__link--02(href="#")
+                                    .list-card__img.list-card__img--02.img
+                                        p.list-card__img-txt ？？？？
+                                        img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                    .list-card__info
+                                        p.list-card__date.list-card__date--02.hidden-pc 2025.4.1
+                                        h2.list-card__ttl.list-card__ttl--02 Lorem ipsum dolor sit amet
+                                        .list-card__wrap
+                                            p.list-card__cat ？？？？
+                                            p.list-card__cat ？？？？
+                                            p.list-card__cat ？？
+                    .btn-01
+                        a.btn-01__btn.btn-01__btn--blue(href="#") 
+                            | インタビュー全体に戻る
+                            img.btn-01__btn-arrow(src=`${assetsPath}/images/common/arrow-white.png`, alt="")
+        include ../_inc/_blocks/_footer.pug
+        include ../_inc/_system/_foot.pug

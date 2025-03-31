@@ -1,0 +1,63 @@
+/*********************************
+ Buttons
+**********************************/
+@use "../modules" as m;
+
+.btn-01{
+    margin:84px auto 0;
+    width: 100%;
+    max-width: 351px;
+    &__btn{
+        color:m.$blue;
+        font-size: 1.9rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        line-height: m.calculate_lh(19, 41);
+        border-radius:34px;
+        background: m.$white;
+        padding:15px 10px 15px 25px;
+        @include m.flex($ai:center,$jc:center,$gap:20px);
+        @include m.transition(background,color,border-color);
+        &--blue{
+            color:m.$white;
+            border:1px solid transparent;
+            border-radius: 34px;
+            background: rgb(255,0,0);
+            background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,102,0,1) 60%, rgba(255,204,0,1) 100%);
+            &:hover{
+                background: m.$white !important;
+                color:m.$blue !important;
+                border-color: m.$blue !important;
+            }
+        }
+        &:hover{
+            // background: rgb(32,89,182);
+            // background: linear-gradient(270deg, rgba(32,89,182,1) 0%, rgba(66,153,224,1) 100%);
+            // background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
+            background: rgb(255,0,0);
+            background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,102,0,1) 60%, rgba(255,204,0,1) 100%);
+            color:m.$white;
+        }
+    }
+    &__btn-arrow{
+        width: 38px;
+    }
+}
+.btn__arrow{
+    max-width: 39px;
+    padding:10px;
+    position: relative;
+    z-index: -1;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      background: m.$white02;
+      border-radius: 100%;
+      z-index: -1;
+    }
+}

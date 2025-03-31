@@ -1,0 +1,672 @@
+//- META INFORMATION
+- const page_title = 'Burger King PH'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+- const isGsap = true
+
+//- CONTENT DATA
+-
+    const benefitData = [
+        { 
+            ttl : ` Pesto Paradise Pizza`,
+            txt : `Fresh basil pesto, mozzarella, cherry tomatoes, and grilled chicken on a stone-baked crust.`,
+            img : "top-benefit_img02.jpg", 
+        },
+        { 
+            ttl : `Triple Cheese <br>Overload Burger`,
+            txt : `Three layers of cheesy goodness—cheddar, Swiss, and mozzarella—melting over a perfectly seared beef patty.`,
+            img : "top-benefit_img01.jpg", 
+        },
+        { 
+            ttl : `BBQ Steakhouse Pizza`,
+            txt : `Tender steak slices, caramelized onions, and BBQ sauce over a cheesy, crispy base—bold flavors in every bite!`,
+            img : "top-benefit_img03.jpg", 
+        },
+        { 
+            ttl :`Ultimate <br> Fire-Grilled Burger`,
+            txt : `Juicy, flame-kissed perfection stacked with crispy bacon, melted cheddar, and our secret smoky sauce`,
+            img : "top-benefit_img04.jpg", 
+        },
+    ]
+
+    const strengthData = [
+        {
+            img:"top-strength_img01.jpg",
+            ttl: `個別式だからこそ本質的な<br>ライフコーチングが濃く深く学べる`,
+            txt: `LCPは、オンラインの個別式ライフコーチングを提供するプロ
+                グラムだからこそ、受講生一人ひとりの目標達成と自己実現に
+                対し、とことん向き合うことを可能としています。集団形式で
+                はなかなか深掘りし切れない、自分自身の中にある真の迷いや
+                コンプレックスなどといった人生の課題も、個別式だからこそ
+                徹底的に向き合い課題解決を進めていくことが可能となります。`
+        },
+        {
+            img:"top-strength_img02.jpg",
+            ttl: `体系的に学習内容がまとめられた<br>完全オリジナルのプログラム`,
+            txt: `学習で使われるプログラムは、脳科学をベースに人間心理の知
+                見が正しく反映・体系化された完全LCPオリジナル資料です。
+                資料は一単元が終わる毎に受講動画と一緒に全てセッション後
+                に専用のチャットアプリ内で共有されるため、学習のポイント
+                の確認や小まめな振り返りも可能となっています。`,
+            class: "black"
+        },
+        {
+            img:"top-strength_img03.jpg",
+            ttl: `完全オンラインで進んでいくから<br>時間と場所に捉われない`,
+            txt: `オンラインでの個別サポートなので時間や場所に捉われずスケ
+                ジュールを調整しながら受講を進めることが可能です。お子様
+                がいてなかなか自分の時間が確保し辛かったり、仕事が忙しく
+                スケジュールが不規則な中でもご自身のペースで日程を調整し
+                ながら時間的なご負担を感じることなく受講していただけます。`
+        },
+        {
+            img:"top-strength_img04.jpg",
+            ttl: `一流の講師陣と確かな受講実績`,
+            txt: `学習で使われるプログラムは、脳科学をベースに人間心理の知
+                見が正しく反映・体系化された完全LCPオリジナル資料です。
+                資料は一単元が終わる毎に受講動画と一緒に全てセッション後
+                に専用のチャットアプリ内で共有されるため、学習のポイント
+                の確認や小まめな振り返りも可能となっています。`,
+            class: "black"
+        },
+    ]
+
+    const blogData = [
+        {
+            img: "top-benefit_img01.jpg",
+            date: "2025.4.1",
+            ttl: `Ultimate Burger`,
+        }, 
+        {
+            img: "top-benefit_img02.jpg",
+            date: "2025.4.1",
+            ttl: `Pesto Pizza`,
+        }, 
+        {
+            img: "top-menu03.jpg",
+            date: "2025.4.1",
+            ttl: `Ultimate Sandwich`,
+        },
+        {
+            img: "top-menu04.jpg",
+            date: "2025.4.1",
+            ttl: `Sandwich`,
+        },
+        {
+            img: "top-menu02.jpg",
+            date: "2025.4.1",
+            ttl: `Pasta`,
+        },
+        {
+            img: "top-menu01.jpg",
+            date: "2025.4.1",
+            ttl: `Salads`,
+        },
+    ]
+
+    const accordionData = [
+        {
+            ttl: "Basic Program",
+            txt01: "ベーシックプログラム",
+            txt02: "才能に目覚める",
+            price:  "計800分",
+            img: "top-program_step01.png",
+            inner: [
+                {
+                    ttl: "プログラムの概要",
+                    txt: `コーチングにおいて好ましい成果を生み出す欠かせない概念や理論を学びな
+                        がら、実践的なコーチングスキルを身につけていきます。人間の脳のメカニ
+                        ズムをどのように行動変容や意識の向上に活かせば良いのか、また他者との
+                        コミュニケーションにどう応用するのかといった包括的な学びを通じて、セ
+                        ルフコーチング能力や対人コミュニケーション能力の習得・向上を目指しま
+                        す。`,
+                },
+                {
+                    ttl: "受講後のレベル",
+                    bullet: [
+                    `コーチングに対する概念や理論を全般的に理解し、自分自身や対人コミュ　ニケーションに役立つ幅広いコーチングスキルを活用できるようになる。`,
+                    `自らの思考や目標を自分自身で整理・修正・発展させていくことができる。`,
+                    ],
+                },
+                {
+                    ttl: "Contents",
+                    bullet: [
+                        `心の正体`,
+                        ` 感情が生まれるメカニズム`,
+                        `LCP Outcome  Process ™`,
+                        `脳科学的に見た正しい目標設定`,
+                        `意思決定能力の正体`,
+                        `ストレスと因果関係`,
+                        `昇華型思考と凝縮型思考`,
+                        `本質的な気付きをもたらす効果的な質問`,
+                        ` 自己理念 ™の形成`,
+                        `優れたコミュニケーターが持つスキル`,
+
+                    ],
+                },
+                {
+                    ttl: "解決可能なケースや取り扱うテーマ",
+                    bullet: [
+                        `自分自身の目標をハッキリさせたい`,
+                        `  理想と現実とのギャップを埋め、自信を持って人生を歩みたい`,
+                        `周囲の声に抑圧されることなく自分の意見や考えを主張したい`,
+                    ],
+                    txt: `10時間以上にわたるコーチング学習の中で、プロコーチが投げかける数多く
+                        の「効果的な質問」を通じ、徹底した自己探求を行います。これにより、自
+                        分自身の軸が明確になり、精神的に立ち返る場所や行動の指針をしっかりと
+                        持つことが可能になります。`,
+                    triangle: true
+                },
+            ],
+        },
+        {
+            ttl: "Master Program",
+            txt01: "マスタープログラム",
+            txt02: "感情に卓越する",
+            price:  "計800分",
+            img: "top-program_step02.png",
+            class: "blue02",
+            read:"blue02",
+            inner: [
+                  { 
+                    colorClass: "blue02",
+                    ttl: "プログラムの概要",
+                    txt: `ベーシックプログラムで培った知識やスキルをさらに発展させ、より高度な
+                        コーチングスキルを習得していきます。後半では、セルフコーチングによる
+                        自己成功だけでなく他者へ好影響を与える力にも注目し、人の意識や行動に
+                        ポジティブな変化をもたらすコミュニケーションスキルを学び習得していく
+                        ことで、リーダーシップや他者マネジメントといった他者へのコーチングに
+                        必要とされる能力を包括的に高めていきます。`,
+                },
+                {
+                    colorClass: "blue02",
+                    ttl: "受講後のレベル",
+                    bullet: [
+                    `活用可能なコーチングスキルの幅が増え、人生で遭遇するあらゆるストレ　スに対する処理能力を身に付けることが可能。`,
+                    `自らの意識や行動だけでなく他者にもコーチングを通じた好ましい変化を　もたらすことができる。`,
+                    ],
+                },
+                {
+                    colorClass: "blue02",
+                    ttl: "Contents",
+                    bullet: [
+                        `人間が持つ感情のシステム`,
+                        ` 影響を与えるコミュニケーション`,
+                        `好ましい感情の活用`,
+                        `アンコンシャス・バイアスの解消`,
+                        `コミュニケーションの構造`,
+                        `コンセプチュアル・スキリング`,
+                        `コンディショニング・スキルの習得`,
+                        `自己理念   と行動原則`,
+                        ` リーダーシップと影響力の武器`,
+                        `Self  Cognitive System の完成`,
+
+                    ],
+                },
+                {
+                    colorClass: "blue02",
+                    ttl: "解決可能なケースや取り扱うテーマ",
+                    bullet: [
+                        `設定された目標に対してより生産性の高い行動を積み重ねたい`,
+                        `自分以外の人へもコーチングを活用し好ましい影響力を発揮したい`,
+                        `自分をより高いレベルで客観視し、もう一段上のレベルでセルフコーチ　ングを行えるようになりたい`,
+                    ],
+                    txt: `自分自身と他者の感情をより深く扱えるようになることで、セルフコーチン
+                        グの精度が一層高まり、解像度の高い目標設定と戦略づくりが可能になりま
+                        す。さらに、他者へ影響を与えるコミュニケーションスキルも磨かれ、より
+                        効果的で豊かな対話を通じて成果を引き出すことができます。`,
+                    triangle: true
+                },
+            ],
+        },
+        {
+            ttl: "Lisence Program",
+            txt01: "ライセンスプログラム",
+            txt02: "プロコーチを目指す",
+            price:  "計800分＋",
+            img: "top-program_step03.png",
+            class: "blue03",
+            read:"blue03",
+            inner: [
+                  { 
+                    colorClass: "blue03",
+                    ttl: "プログラムの概要",
+                    txt: `プロコーチとして必要なコーチングスキルや概念・理論を、単に「使う」か
+                        ら「人に伝えられる」レベルへとステップアップしていきます。高度な心理
+                        コーチングのスキルを活用する実践的なトレーニングを重ねることで、他者
+                        にポジティブな感情を呼び起こし、目標達成に向けた意識と行動を変容させ
+                        られる存在へと成長します。`,
+                    txt02: `<span>※</span>ライセンス・プログラム単一でのご受講はできません。ベーシックプログラム、マスタープログラム２つ　のプログラムを修了した方のみライセンスプログラムはご受講が可能です。`
+                },
+                {
+                    colorClass: "blue03",
+                    ttl: "受講後のレベル",
+                    bullet: [
+                    `個人・組織を問わず、コーチングスキルをあらゆる現場で実践的に活用　できるようになります。`,
+                    `数十時間の練習を通じ、LCPの資料を活用しながらMaster Programまで　 のトレーニングを現場で提供できる。`,
+                    ],
+                },
+                {
+                    colorClass: "blue03",
+                    ttl: "Contents",
+                    bullet: [
+                        `Communication Five Elements  ™`,
+                        `LCP Integration Skills ™`,
+                        `プロコーチの器を形成する`,
+                        `影響のトライフォースとスリーコア`,
+                        `馬車を支える二つの車輪`,
+                        `意識と行動変容の3原理と５原則`,
+                        `Seven Brand Keywords`,
+                        `指導者としての目標設定`,
+                        `プロコーチコンサルテーション導入`,
+                        `コーチ活動の実践とPDCA`,
+
+                    ],
+                },
+                {
+                    colorClass: "blue03",
+                    ttl: "解決可能なケースや取り扱うテーマ",
+                    bullet: [
+                        `プロのメンタルコーチとして人を支援する側へと成長したい`,
+                        `結果を生み出せるプロメンタルコーチとして活躍したい`,
+                        `メンタルコーチとして活躍するまでの活動方針を目標から明確に設計して　実行に移したい`,
+                    ],
+                    txt: `他者へのコーチングを実践的に練習することで、クライアントの課題に最適
+                        なコーチングスキルを柔軟に活用・提供できる力が身につきます。さらに、
+                        プロコーチとしての活動を定期的にコンサルテーションで振り返りながら進
+                        めることで、大きな不安や行き詰まりを感じることなく、自信をもって成長
+                        を続けられます。`,
+                    triangle: true
+                },
+            ],
+        }
+    ]
+    
+    const faqData =  [
+        {
+            ttl:`受講時に使うアプリケーションは何を使用しますか？`,
+            ans: `Zoomを使用します。そのため受講開始時までにZoomアプリのインストールをお願いいたします。`
+        },
+        {
+            ttl:`受講時に使うアプリケーションは何を使用しますか？`,
+            ans: `Zoomを使用します。そのため受講開始時までにZoomアプリのインストールをお願いいたします。`
+        },
+        {
+            ttl:`受講時に使うアプリケーションは何を使用しますか？`,
+            ans: `Zoomを使用します。そのため受講開始時までにZoomアプリのインストールをお願いいたします。`
+        },
+    ]
+    
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body.home
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- Top Banner
+            .top-banner.relative
+                .top-banner__bnr-img.img
+                    img.img__main.hidden-sp(src=`${assetsPath}/images/top/top-bnr_bnr-img02.jpg` alt='')
+                    img.img__main.hidden-pc(src=`${assetsPath}/images/top/top-bnr_bnr-img-sp.jpg` alt='')
+
+                .top-banner__wrap
+                    h2.top-banner__ttl Have it your Way. <br> Satisfy Your Cravings,<br> One Bite at a Time!
+             
+            //- Top About
+            .top-about 
+                .top-about__info 
+                    h2.top-about__ttl About us
+                    p.top-about__txt We’re more than just a burger joint—we’re passionate <br> food lovers committed to serving fresh, <br>handcrafted burgers made with premium ingredients. 
+                    p.top-about__descrpt 
+                        | Our patties are 100% pure beef, grilled to perfection, and paired with freshly baked buns,
+                        br
+                        | crisp veggies, and mouthwatering sauces.
+                    .btn-01
+                        a.btn-01__btn(href="#") 
+                            | まずは無料体験に申し込む
+                            img.btn-01__btn-arrow(src=`${assetsPath}/images/common/btn-arrow.png`, alt="")
+           
+            //- Top Benefit
+            section.top-seller
+                .top-seller__info
+                    .ttl-01
+                        h2.ttl-01__ttl Best Seller
+                        p.ttl-01__txt Every Month
+                    ul.list-01 
+                        each benefitItem in benefitData
+                            li.list-01__item 
+                                .list-01__outerCon
+                                    .list-01__innerCon
+                                        span.list-01__number
+                                        .list-01__img.img
+                                            img.img__main(src=`${assetsPath}/images/top/` + benefitItem.img, alt="")                
+                                        p.list-01__ttl !{benefitItem.ttl}
+                                        p.list-01__txt !{benefitItem.txt}
+            
+            //- Top Essence
+            //- section.top-essence 
+            //-     .ttl-01.ttl-01--right
+            //-         h2.ttl-01__ttl Essence
+            //-         p.ttl-01__txt コーチングとは何か？  
+            //-     .container
+            //-         .top-essence__info 
+            //-             p.top-essence__txt
+            //-                 | 人の意識と行動に <br>
+            //-                 span.span-blue 好ましい変容を生み出す <br>
+            //-                 | 専門技術
+            //-             .top-essence__wrap 
+            //-                 .top-essence__wrap-txt
+            //-                     p.top-essence__txt02 
+            //-                         | コーチングとは、
+            //-                         span.top-essence__txt02-hl 効果的な対話を通じてクライアント(相手) の目標達成や問題解決をサポートする専門技術
+            //-                         | のことです。コーチは、的確な質問やフィードバックを行い、クライアントが自 分自身の思考や感情を整理し、自分で答えを導き出せるように手助けします。
+            //-                         span.top-essence__txt02-hl 単にアドバイスを与えるのではなく、クライアントの内面にある強みや可能性を引き出し、新しい行動を起こせるよう促す点がティーチングとは違う大きな特徴
+            //-                         | です。コーチングとティーチングの違いについては
+            //-                         span.top-essence__txt02-link こちらの記事
+            //-                         | で詳しく解説しています。
+            //-                 .top-essence__wrap-img
+            //-                     img(src=`${assetsPath}/images/top/top-essence_img01.png`, alt="")
+            
+            //- Top ingredients
+            section.top-ingredients 
+                .container
+                    .top-ingredients__info
+                        .ttl-01
+                            h2.ttl-01__ttl Fresh Ingredients    
+                            p.ttl-01__txt The Art of the Perfect Burger
+                    p.top-ingredients__descrpt.fs-2 
+                        | LCPのコーチングプログラムでは、以下のような「本人の中にしか答えがない」<br>
+                        | 正解が明確に存在しないテーマを取り扱いながらコーチングを実践的に学習し、<br>
+                        | テーマの課題解決に努めていきます。              
+                    ul.top-ingredients__list.js-list 
+                        li.top-ingredients__item.js-list_item
+                            .top-ingredients__check
+                                img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
+                            p.top-ingredients__txt Premium 100% Beef: jucicy,flavorful and unbeatable taste.
+                        li.top-ingredients__item.js-list_item
+                            .top-ingredients__check
+                                img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
+                            p.top-ingredients__txt Lettuce: Fresh, crisp, and perfectly balanced.
+                        li.top-ingredients__item.js-list_item
+                            .top-ingredients__check
+                                img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
+                            p.top-ingredients__txt Tomatoes: Ripe, sweet, and refreshing.
+                        li.top-ingredients__item.js-list_item
+                            .top-ingredients__check
+                                img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
+                            p.top-ingredients__txt Cheese: Melts smoothly for rich flavor
+                        li.top-ingredients__item.js-list_item
+                            .top-ingredients__check
+                                img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
+                            p.top-ingredients__txt Buns: Soft, fluffy, and lightly toasted.
+           
+            //- //- Top Blog
+            section.top-menu
+                //- .top-blog__engTxt-wrap.marquee
+                //- .top-blog-bnr__swiper.swiper.js-swiper
+                    .swiper-wrapper.top-blog-bnr__swiper-wrapper 
+                        - for(var i=0; i < 2; i++)
+                            .swiper-slide.top-blog-bnr__swiper-slide
+                                .top-blog-bnr__swiper-img.img
+                                    img.img__main(src=`${assetsPath}/images/top/top-blog_img01.jpg`, alt="")
+                            .swiper-slide.top-blog-bnr__swiper-slide
+                                .top-blog-bnr__swiper-img.img
+                                    img.img__main(src=`${assetsPath}/images/top/top-blog_img02.jpg`, alt="")
+                            .swiper-slide.top-blog-bnr__swiper-slide
+                                .top-blog-bnr__swiper-img.img
+                                    img.img__main(src=`${assetsPath}/images/top/top-blog_img03.jpg`, alt="")
+                .top-menu__info
+                    .ttl-01
+                        h2.ttl-01__ttl Menu
+                        p.ttl-01__txt Pizza, Burger and Pasta.
+                        .btn-01.hidden-sp
+                            a.btn-01__btn.btn-01__btn--blue(href="#") 
+                                | MORE
+                                img.btn-01__btn-arrow(src=`${assetsPath}/images/common/arrow-white.png`, alt="")
+                    .top-menu__swiper02-con 
+                        .top-menu__swiper02.swiper
+                            .top-menu__swiper02-wrapper
+                                each blogItem in blogData
+                                    .top-menu__swiper02-slide
+                                        a.top-menu__swiper02-link(href="#")
+                                            .top-menu__swiper02-img.img
+                                                img.img__main(src=`${assetsPath}/images/top/`+ blogItem.img, alt="")
+                                            p.top-menu__swiper02-date #{blogItem.date}
+                                            h2.top-menu__swiper02-ttl !{blogItem.ttl}
+                                            .top-menu__swiper02-wrap
+                                                p.top-menu__swiper02-cat #{blogItem.cat}
+                                                p.top-menu__swiper02-cat #{blogItem.cat}
+                                                p.top-menu__swiper02-cat #{blogItem.cat}
+                    .btn-01.hidden-pc
+                        a.btn-01__btn.btn-01__btn--blue(href="#") 
+                            | MORE
+                            img.btn-01__btn-arrow(src=`${assetsPath}/images/common/arrow-white.png`, alt="")
+            
+            //- //- Top Program
+            //- section.top-program 
+            //-     .container
+            //-         .ttl-01.ttl-01--center
+            //-             h2.ttl-01__ttl Program Overview
+            //-             p.ttl-01__txt プログラム概要と成長ステップ
+            //-         ul.list-accordion.js-accordion.js-list
+            //-             each accordionItem in accordionData
+            //-                 li.list-accordion__item.js-list_item
+            //-                     a.list-accordion__link(href="")(class="list-accordion__link--"+ accordionItem.class)
+            //-                         img.list-accordion__step(src=`${assetsPath}/images/top/`+ accordionItem.img alt='')
+            //-                         .list-accordion__wrap 
+            //-                             .list-accordion__wrap-info
+            //-                                 p.list-accordion__wrap-txt01 #{accordionItem.txt01} 
+            //-                                 h2.list-accordion__wrap-ttl #{accordionItem.ttl} 
+            //-                                 p.list-accordion__wrap-txt02 #{accordionItem.txt02} 
+            //-                             p.list-accordion__wrap-price #{accordionItem.price} 
+            //-                         .list-accordion__read(class="list-accordion__read--"+ accordionItem.class)
+            //-                             p.list-accordion__read-txt Read More
+            //-                     .list-accordion__content 
+            //-                         if accordionItem.inner 
+            //-                             .list-accordion__inner 
+            //-                                 each innerItem,id in accordionItem.inner
+            //-                                     - var strID = String(id + 1).padStart(2, '0')
+            //-                                     .list-accordion__inner-info(class=`list-accordion__inner-info${strID}`)
+            //-                                         h2.list-accordion__inner-ttl(class=`list-accordion__inner-ttl--` + innerItem.colorClass) #{innerItem.ttl}
+            //-                                         .list-accordion__inner-bullet-wrap(class=`list-accordion__inner-bullet-wrap${strID}`)
+            //-                                             if innerItem.bullet
+            //-                                                 each bulletItem in innerItem.bullet
+            //-                                                     p.list-accordion__inner-bullet(class=`list-accordion__inner-bullet--` + innerItem.colorClass) !{bulletItem}
+            //-                                         if innerItem.triangle 
+            //-                                             .list-accordion__inner-triangle(class=`list-accordion__inner-triangle--` + innerItem.colorClass)
+            //-                                         if innerItem.txt
+            //-                                             p.list-accordion__inner-txt !{innerItem.txt}
+            //-                                         if innerItem.txt02
+            //-                                             p.list-accordion__inner-txt02 !{innerItem.txt02}
+       
+            //- //-Top Course
+            //- section.top-course 
+            //-     .container
+            //-         .ttl-01.ttl-01--left
+            //-             h2.ttl-01__ttl Course 
+            //-             p.ttl-01__txt コースと受講料金
+            //-         table.top-course__tb.hidden-sp
+            //-             tr.top-course__tr 
+            //-                 th.top-course__th
+            //-                 th.top-course__th-ttl01 個別受講
+            //-                 th.top-course__th-ttl02(colspan="2") プログラム同時受講
+            //-             tr.top-course__tr 
+            //-                 td.top-course__td-01
+            //-                     p.top-course__td-txt ベーシックプログラム
+            //-                     h2.top-course__td-ttl Basic Program
+            //-                     p.top-course__td-txt 80分×10回
+            //-                 td.top-course__td-02
+            //-                     p.top-course__td-price 160,000円
+            //-                     p.top-course__td-span-price (税込176,000円)
+            //-                 td.top-course__td-03(rowspan="2")
+            //-                     p.top-course__td-p-txt コーチングを習得し<br>可能性を拡大する
+            //-                     p.top-course__td-price 330,000円
+            //-                     p.top-course__td-span-price (税込363,000円)
+            //-                     p.top-course__td-price-off 
+            //-                         span 1.1 
+            //-                         | 万円OFF
+            //-                 td.top-course__td-04(rowspan="3")
+            //-                     p.top-course__td-p-txt プロライセンスの<br>取得を目指す
+            //-                     p.top-course__td-price 680,000円
+            //-                     p.top-course__td-span-price (税込748,000円)
+            //-                     p.top-course__td-price-off 
+            //-                         span 2.2 
+            //-                         | 万円OFF
+            //-             tr.top-course__tr 
+            //-                 td.top-course__td-01.top-course__td-01--blue02
+            //-                     p.top-course__td-txt マスタープログラム
+            //-                     h2.top-course__td-ttl Master Program
+            //-                     p.top-course__td-txt 80分×10回
+            //-                 td.top-course__td-02
+            //-                     p.top-course__td-price 160,000円
+            //-                     p.top-course__td-span-price (税込176,000円)
+            //-             tr.top-course__tr 
+            //-                 td.top-course__td-01.top-course__td-01--cyan
+            //-                     p.top-course__td-txt ライセンスプログラム
+            //-                     h2.top-course__td-ttl License Program
+            //-                     p.top-course__td-txt 80分×10回
+            //-                 td.top-course__td-02
+            //-                     p.top-course__td-price 360,000円
+            //-                     p.top-course__td-span-price (税込396,000円)
+            //-                 td.top-course__td-02.top-course__td-02--white
+            //-         table.top-course__tb-sp.hidden-pc 
+            //-             tr.top-course__tr-sp 
+            //-                 th.top-course__th-sp
+            //-                     p.top-course__th-sp-txt ベーシックプログラム
+            //-                     h2.top-course__th-sp-ttl Basic Program
+            //-                     p.top-course__th-sp-txt 80分×10回
+            //-                 th.top-course__th-sp.top-course__th-sp--blue02
+            //-                     p.top-course__th-sp-txt ベーシックプログラム
+            //-                     h2.top-course__th-sp-ttl Master Program
+            //-                     p.top-course__th-sp-txt 80分×10回
+            //-                 th.top-course__th-sp.top-course__th-sp--cyan
+            //-                     p.top-course__th-sp-txt ベーシックプログラム
+            //-                     h2.top-course__th-sp-ttl License Program
+            //-                     p.top-course__th-sp-txt 80分×10回
+            //-             tr.top-course__tr-sp 
+            //-                 td.top-course__td-03
+            //-                     p.top-course__td-price.top-course__td-price--sp 160,000円
+            //-                     p.top-course__td-span-price.top-course__td-span-price--sp (税込176,000円)
+            //-                 td.top-course__td-03
+            //-                     p.top-course__td-price.top-course__td-price--sp 180,000円
+            //-                     p.top-course__td-span-price.top-course__td-span-price--sp (税込198,000円)
+            //-                 td.top-course__td-02
+            //-                     p.top-course__td-price.top-course__td-price--sp 360,000円
+            //-                     p.top-course__td-span-price.top-course__td-span-price--sp (税込396,000円)
+            //-             tr.top-course__tr-sp
+            //-                 td.top-course__td-04-sp(colspan="3") 
+            //-             tr.top-course__tr-sp 
+            //-                 td.top-course__td-03(colspan="2")
+            //-                     p.top-course__td-p-txt.top-course__td-p-txt--sp コーチングを習得し可能性を拡大する
+            //-                     p.top-course__td-price.top-course__td-price--sp 
+            //-                         | 330,000円
+            //-                         span (税込363,000円)
+            //-                     p.top-course__td-price-off.top-course__td-price-off--sp 
+            //-                         span 1.1 
+            //-                         | 万円OFF
+            //-             tr.top-course__tr-sp 
+            //-                 td.top-course__td-03(colspan="3")
+            //-                     p.top-course__td-p-txt.top-course__td-p-txt--sp プロライセンスの取得を目指す
+            //-                     p.top-course__td-price.top-course__td-price--sp 
+            //-                         | 680,000円
+            //-                         span (税込748,000円)
+            //-                     p.top-course__td-price-off.top-course__td-price-off--sp 
+            //-                         span 2.2
+            //-                         | 万円OFF
+            //-         .top-course__wrap
+            //-             .top-course__info 
+            //-                 h2.top-course__info-ttl キャンセル規定とお支払い方法について
+            //-                 p.top-course__info-txt 
+            //-                     | 急遽の日程変更のタイミングとその回数によってキャンセル料や日程変更手数料が発生いたします。詳細についてはこちらをご確認ください。　お支払いは、銀行振込と、クレジットカードによる分割払いが一部対応可能となります。
+            //-                     br
+            //-                     |詳細については以下『LCP キャンセル規定と支払い方法等に関する規約［PDF］』をご確認ください。
+            //-                 a.top-course__info-link(href="#")
+            //-                     p.top-course__info-txt01 LCP キャンセル規定と支払い方法等に関する規約［PDF］
+            //-                     img.top-course__info-icon(src=`${assetsPath}/images/top/top-course_icon.png`, alt="")
+            //-             .top-course__info
+            //-                 h2.top-course__info-ttl お申し込みの前にご確認いただきたいこと
+            //-                 p.top-course__info-txt 
+            //-                     | 学生の方のご受講には保護者様のご承諾をお願いする場合がございます。
+            //-                     br
+            //-                     | 受講希望者様が扶養学生者であり、保護者様の快諾が得られない場合の受講は原則お断りをしています。あらかじめご了承下さい。
+            //-                 p.top-course__info-txt 
+            //-                     | 現在心身の不調等にて通院・治療中(心療内科・精神科等)またはその予定の方は、心身の安全のため、治療と同時にプログラムをご受講することは
+            //-                     br
+            //-                     | 推奨しておらず、原則お断りをしています。お申込み前のご相談もお受けしておりますので、お気軽にご連絡ください。
+            //-                 p.top-course__info-txt 
+            //-                     | 受講のお申し込みの際にはLCPのサービス利用規約の内容に同意したものとされます。
+            //-                     br
+            //-                     | そのため本受講プログラムの本受講をお申し込みの前に必ず以下『LCP サービス利用に関する規約［PDF］』をご一読ください。
+            //-                 a.top-course__info-link(href="#")
+            //-                     p.top-course__info-txt01 LCP キャンセル規定と支払い方法等に関する規約［PDF］
+            //-                     img.top-course__info-icon(src=`${assetsPath}/images/top/top-course_icon.png`, alt="")
+            //- include ./_inc/_blocks/_apply-bnr.pug
+
+            //- //-Top Flow
+            //- section.top-flow
+            //-     .container
+            //-         h2.top-flow__ttl 無料体験から本受講への流れ
+            //-         ul.top-flow__list.js-list
+            //-             li.top-flow__item.js-list_item
+            //-                 .top-flow__img.top-flow__img--01 
+            //-                     img(src=`${assetsPath}/images/top/top-flow_img01.png`, alt="")
+            //-                 .top-flow__info
+            //-                     img.top-flow__number.hidden-sp(src=`${assetsPath}/images/top/top-flow_numb1.png`, alt="")
+            //-                     .top-flow__wrap
+            //-                         img.top-flow__number.hidden-pc(src=`${assetsPath}/images/top/top-flow_numb1.png`, alt="")
+            //-                         h3.top-flow__wrap-ttl LCP公式LINEより無料体験を申し込み 
+            //-                         p.top-flow__wrap-txt.hidden-sp 公式WEBサイトの無料体験お申し込みボタンからLCP公式LINEへ登録後、無料体験をお申し込み。
+            //-                     p.top-flow__wrap-txt.hidden-pc 公式WEBサイトの無料体験お申し込みボタンからLCP公式LINEへ登録後、無料体験をお申し込み。
+
+            //-             li.top-flow__item.js-list_item
+            //-                 .top-flow__img.top-flow__img--02 
+            //-                     img(src=`${assetsPath}/images/top/top-flow_img02.png`, alt="")
+            //-                 .top-flow__info
+            //-                     img.top-flow__number.hidden-sp(src=`${assetsPath}/images/top/top-flow_numb2.png`, alt="")
+            //-                     .top-flow__wrap
+            //-                         img.top-flow__number.hidden-pc(src=`${assetsPath}/images/top/top-flow_numb2.png`, alt="")
+            //-                         h3.top-flow__wrap-ttl LCP公式LINEより無料体験を申し込み 
+            //-                         p.top-flow__wrap-txt.hidden-sp 公式WEBサイトの無料体験お申し込みボタンからLCP公式LINEへ登録後、無料体験をお申し込み。
+            //-                     p.top-flow__wrap-txt.hidden-pc 公式WEBサイトの無料体験お申し込みボタンからLCP公式LINEへ登録後、無料体験をお申し込み。
+                                
+            //-             li.top-flow__item.js-list_item
+            //-                 .top-flow__img.top-flow__img--03 
+            //-                     img(src=`${assetsPath}/images/top/top-flow_img03.png`, alt="")
+            //-                 .top-flow__info
+            //-                     img.top-flow__number.hidden-sp(src=`${assetsPath}/images/top/top-flow_numb3.png`, alt="")
+            //-                     .top-flow__wrap
+            //-                         img.top-flow__number.hidden-pc(src=`${assetsPath}/images/top/top-flow_numb3.png`, alt="")
+            //-                         h3.top-flow__wrap-ttl オンライン無料体験セッションを受講 
+            //-                         p.top-flow__wrap-txt.hidden-sp 当日を迎えたら無料体験セッションを受講。セッションを通じて受講に対する疑問点を解消します。
+            //-                     p.top-flow__wrap-txt.hidden-pc 当日を迎えたら無料体験セッションを受講。セッションを通じて受講に対する疑問点を解消します。
+            //-             li.top-flow__item.js-list_item
+            //-                 .top-flow__img.top-flow__img--04 
+            //-                     img(src=`${assetsPath}/images/top/top-flow_img04.png`, alt="")
+            //-                 .top-flow__info
+            //-                     img.top-flow__number.hidden-sp(src=`${assetsPath}/images/top/top-flow_numb4.png`, alt="")
+            //-                     .top-flow__wrap
+            //-                         img.top-flow__number.hidden-pc(src=`${assetsPath}/images/top/top-flow_numb4.png`, alt="")
+            //-                         h3.top-flow__wrap-ttl 受講開始 
+            //-                         p.top-flow__wrap-txt.hidden-sp 無料体験セッションで受講に関する疑問がクリアになったら本申し込み。LCPの受講がスタート！
+            //-                     p.top-flow__wrap-txt.hidden-pc 無料体験セッションで受講に関する疑問がクリアになったら本申し込み。LCPの受講がスタート！
+
+            
+            //- include ./_inc/_blocks/_contact.pug
+                
+
+        include ./_inc/_blocks/_footer.pug
+        include ./_inc/_system/_foot.pug
