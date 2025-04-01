@@ -21,7 +21,7 @@ export const swiperJS = () => {
           },
         };
       }
-      else if ( $( this ).hasClass( 'top-blog-bnr__swiper' ) ) {
+      else if ( $( this ).hasClass( 'top-menu-bnr__swiper' ) ) {
         options = {
           autoplay: {
             delay: 0,
