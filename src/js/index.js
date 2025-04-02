@@ -4,7 +4,7 @@ import { headerScroll } from "./modules/_headerScroll";
 import { menuOpen } from "./modules/_menuOpen";
 import { swiperJS } from "./modules/_swiper";
 import { tabs } from "./modules/_tabs";
-import {gsapBenefits,gsapTtl,gsapList} from "./lib/_gsap";
+import {gsapBenefits,gsapTtl,gsapList,gsapLocation} from "./lib/_gsap";
 import { marquee } from "./modules/_marquee";
 $( function() {
   
@@ -26,6 +26,7 @@ $( function() {
   gsapBenefits();
   gsapTtl();
   gsapList();
+  gsapLocation();
 
 } );
 

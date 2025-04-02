@@ -5,59 +5,50 @@
             menu : [
                 { name: 'Top', href: `${relativePath}/` },
                 { name: 'About', href: "#" },
-                { name: 'Benefits', href: "#" },
-                { name: 'Essence', href: "#" },
-                { name: 'Voice', href: "#" },
-                { name: 'Strength', href: "#" },
-                { name: 'Blog', href: "#" },
-                { name: 'Program', href: "#" },
-                { name: 'Course', href: "#" },
-                { name: 'FAQ', href: "#" },
-            ]
-        },
-        {
-            menuName : "Media",
-            menu : [
-                { name: 'LCP公式SNS', href: `${relativePath}/` },
-                { 
-                    img01: "footer_social-img01.png", 
-                    img02: "footer_social-img02.png"  
-                },
-                //- { img: "footer_social-img02.png"  },
+                { name: 'Location', href: "#" },
             ]
         },
         { 
-            menuName : "INFORMATION & RAW",
+            menuName : "Other",
             menu : [
-                { name: '会社概要', href: `${relativePath}/` },
-                { name: 'プライバシーポリシー', href: "#" },
-                { name: 'サービス利用規約', href: "#" },
-                { name: '特定商取引法に基づく表示', href: "#" },
-                { name: 'お問い合わせ', href: "#" },
+                { name: 'Menu', href: "#" },
+                { name: 'Order Now', href: `${relativePath}/` },
+
             ]
-        }
+        },
+         { 
+            menuName : "Contact",
+            menu : [
+                { name: '+1 (555) 123-4567', href: "#" },
+                { name: '+1 (555) 123-4567', href: `${relativePath}/` },
+            ]
+        },
+
     ]
 
 footer.footer.js-bg
     .footer__container.img 
-        img.img__main(src=`${assetsPath}/images/common/footer_img.jpg`, alt="")
+        //- img.img__main(src=`${assetsPath}/images/top/top-bnr_bnr-img.jpg`, alt="")
         .footer__wrap
-            img.footer__logo(src=`${assetsPath}/images/common/footer_logo.png`, alt="")
-            ul.footer__menu01
-                each footerItem, id in footerData
-                    - var strID = String(id + 1).padStart(2, '0')
-                        li.footer__menu01-item01
-                            h3.footer__menu01-ttl #{footerItem.menuName}
-                            ul.footer__menu02(class=`footer__menu02-con-${strID}`)
-                                each item in footerItem.menu
-                                    li.footer__menu02-item02
-                                        if item.href
-                                            a.footer__menu02-link(href=item.href) #{item.name}
-                                        else
-                                            a.footer__menu02-img(href="#")
-                                                img.footer__menu02-img01(src=`${assetsPath}/images/common/${item.img01}` alt="")
-                                                img.footer__menu02-img02(src=`${assetsPath}/images/common/${item.img02}` alt="")
-            p.footer__copyright &copy; 2025 NATURE GATE Co.,LTD. All right reserved.
+            h2.footer__logo Burger King PH
+            .footer__info
+                ul.footer__menu01
+                    each footerItem, id in footerData
+                        - var strID = String(id + 1).padStart(2, '0')
+                            li.footer__menu01-item01
+                                h3.footer__menu01-ttl #{footerItem.menuName}
+                                ul.footer__menu02(class=`footer__menu02-con-${strID}`)
+                                    each item in footerItem.menu
+                                        li.footer__menu02-item02
+                                            if item.href
+                                                a.footer__menu02-link(href=item.href) #{item.name}
+                .footer__img-wrap 
+                    a.footer__img(href="#") 
+                        img.footer__menu02-img01(src=`${assetsPath}/images/common/footer_social-img01.png`, alt="")
+                    a.footer__img(href="#") 
+                        img.footer__menu02-img02(src=`${assetsPath}/images/common/footer_social-img02.png`, alt="")
+                    a.footer__img(href="#") 
+                        img.footer__menu02-img03(src=`${assetsPath}/images/common/footer_social-img03.png`, alt="")
         .footer__signUp.hidden-pc 
             img.footer__arrow(src=`${assetsPath}/images/common/footer_arrow.png`, alt="")
             p.footer__signUp-txt まずは無料体験セッションに申し込む

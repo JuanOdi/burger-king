@@ -60,8 +60,6 @@ export const gsapTtl = () => {
             { xPercent: 50, opacity: 0 },          
             { xPercent: 0, opacity: 1, duration: 1, ease: "power2.out" }
         );
-
-      
         if (txt) {
             tl.fromTo(
                 txt,
@@ -104,3 +102,35 @@ export const gsapList = () => {
     });
 };
 
+export const gsapLocation = () => {
+    let sections = document.querySelectorAll(".top-location__item");
+
+    sections.forEach((section) => {
+        let img = section.querySelector(".top-location__img");
+        let wrap = section.querySelector(".top-location__wrap");
+
+        let tl = gsap.timeline();
+
+        tl.fromTo(
+            img, 
+            { xPercent: -50, opacity: 0 },          
+            { xPercent: 0, opacity: 1, duration: 1, ease: "power2.out" }
+        );
+        if (wrap) {
+            tl.fromTo(
+                wrap,
+                { xPercent: 50, opacity: 0 }, 
+                { xPercent: 0, opacity: 1, duration: .7, ease: "power2.out" },
+                "-=0.5" 
+            );
+        }
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1,
+            animation: tl,
+        });
+    });
+};
