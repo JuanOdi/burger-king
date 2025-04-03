@@ -283,12 +283,12 @@
 }
 
 .lp-page{
-  padding-inline: m.percentVal(235,1500) 14px ;
+  // padding-inline: m.percentVal(235,1500) 14px ;
   @include m.mqMax{
     padding-inline: 42px;
   }
   &__content{
-    @include m.flex($ai:flex-start,$jc:space-between,$gap:135px);
+    @include m.flex($ai:flex-start,$jc:center);
     @include m.mqMax{
       flex-wrap: wrap;
       gap:100px;
@@ -297,27 +297,27 @@
   .ttl-02{
     margin-top: unset;
   }
-  &__menu{
-    width: 100%;
-    max-width: 300px;
-    @include m.mqMax(767px){
-      max-width: unset;
-    }
-    &-articles{
-      margin-top: 160px;
-      @include m.mqMax{
-        margin-top: unset;
-      }
-    }
-    &-reco{
-      margin-top: 67px;
-    }
-    &-ttl{
-      font-size: 1.6rem;
-      padding-bottom: 10px;
-      border-bottom: 1px solid m.$blue;
-    }
-  }
+  // &__menu{
+  //   width: 100%;
+  //   max-width: 300px;
+  //   @include m.mqMax(767px){
+  //     max-width: unset;
+  //   }
+  //   &-articles{
+  //     margin-top: 160px;
+  //     @include m.mqMax{
+  //       margin-top: unset;
+  //     }
+  //   }
+  //   &-reco{
+  //     margin-top: 67px;
+  //   }
+  //   &-ttl{
+  //     font-size: 1.6rem;
+  //     padding-bottom: 10px;
+  //     border-bottom: 1px solid m.$blue;
+  //   }
+  // }
   &__info{
     width: 100%;
     max-width: 850px;

@@ -393,11 +393,12 @@
     }
   }
   &__date{
+    margin-top: 10px;
     font-size: 1.2rem;
     line-height: m.calculate_lh(12,20);
     font-weight: 400;
     &--02{
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: m.$gray05;
     }
     @include m.mqMax{
@@ -431,15 +432,24 @@
       order:3;
     }
   }
-  &__cat{
-    font-size: 1rem;
-    font-weight: 300;
-    color: m.$gray06;
-    border: 1px solid rgba(m.$gray04, 0.5);
-    border-radius:16px;
-    padding: 8px 15px;
-    @include m.mqMax{
-      font-size: 1.4rem;
+  &__btn{
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 25px;
+    background-color: rgb(216 33 33);
+    margin: 20px auto;
+    color: m.$white;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    @include m.transition(background-color, color,border-color);
+
+    &:hover{
+      background-color: m.$white;
+      color: m.$black;
+      border-color: rgb(216 33 33);
     }
   }
   &__tag{
@@ -455,26 +465,6 @@
     }
   }
 }
-// .list-card02{
-
-//   &__link{
-//     @include m.flex($gap:45px);
-//   }
-//   &__img{
-//     aspect-ratio: 328/169;
-//     width: 328px;
-//     border-radius: 9px;
-//     &-txt{
-//       color:m.$white;
-//       padding:5px 20px;
-//       max-width: 160px;
-//       border-bottom-left-radius: 9px;
-//       margin-left: auto;
-//       background: rgb(38,106,213);
-//       background: linear-gradient(90deg, rgba(38,106,213,1) 0%, rgba(69,150,222,1) 74%, rgba(95,185,229,1) 100%);
-//     }
-//   }
-// }
 
 .list-02{
   counter-reset: number;
@@ -538,14 +528,23 @@
     &:nth-child(n+2){
       margin-top: 40px;
     }
+    &:hover{
+      .img__main{
+        transform: scale(1.1);
+      }
+    }
   }
   &__info{
     max-width: 850px;
     width: 100%;
   }
   &__img{
-    aspect-ratio: 836/443;
+    aspect-ratio: 400/200;
     width: 100%;
+    border-radius: 30px;
+    .img__main{
+      @include m.transition(transform)
+    }
   }
   &__wrap{
     margin-top: 45px;
@@ -556,6 +555,31 @@
     line-height: m.calculate_lh(28,39);
     @include m.mqMax{
       font-size: 2rem;
+    }
+  }
+  &__btn-wrap{
+    @include m.flex($gap:20px,$jc:center ,$ai:center);
+  }
+  &__btn{
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 25px;
+    background-color: rgb(216 33 33);
+    margin-top: 30px;
+    color: m.$white;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    @include m.transition(background-color, color,border-color);
+
+    &:hover{
+      background-color: m.$white;
+      color: m.$black;
+      border-color: rgb(216 33 33);
+    }
+    &01{
+      background-color: rgb(6, 163, 6);
     }
   }
 }

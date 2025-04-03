@@ -66,12 +66,13 @@
 
     const menuData = [
         {
-            img: "top-benefit_img01.jpg",
+            img: "top-menu_img01.jpg",
             date: "2025.4.1",
             ttl: `Ultimate Burger`,
+            url: './burger-page'
         }, 
         {
-            img: "top-benefit_img02.jpg",
+            img: "top-menu_img02.jpg",
             date: "2025.4.1",
             ttl: `Pesto Pizza`,
         }, 
@@ -384,7 +385,7 @@ html(lang="ja")
                             .top-menu__swiper02-wrapper
                                 each menuItem in menuData
                                     .top-menu__swiper02-slide
-                                        a.top-menu__swiper02-link(href="#")
+                                        a.top-menu__swiper02-link(href=menuItem.url)
                                             .top-menu__swiper02-img.img
                                                 img.img__main(src=`${assetsPath}/images/top/`+ menuItem.img, alt="")
                                             p.top-menu__swiper02-date #{menuItem.date}

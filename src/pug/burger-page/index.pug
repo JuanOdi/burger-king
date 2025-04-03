@@ -1,0 +1,63 @@
+//- META INFORMATION
+- const page_title = 'LCP'
+- const relativePath = '../..'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'blog-page'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+   
+html(lang="ja")
+    head
+        include ../_inc/_system/_head.pug
+
+    body
+        include ../_inc/_blocks/_header.pug
+
+        main.main
+
+            section.burger-page
+                .container
+                    .lp-page
+                        .lp-page__content
+                            .lp-page__info
+                                .ttl-03 
+                                    h2.ttl-03__ttl Ultimate Burger
+                                ul.list-page
+                                    li.list-page__item
+                                        .list-page__img.img 
+                                            img.img__main(src=`${assetsPath}/images/top/top-menu_img01.jpg`, alt="")
+                                        .list-page__wrap
+                                            p.list-page__txt 
+                                                | Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, incidunt. Porro quidem maiores, possimus voluptatibus accusantium nemo placeat neque.
+                                        .list-page__btn-wrap 
+                                            a.list-page__btn(href="#") Add to Cart
+                                            a.list-page__btn01.list-page__btn(href="#") Buy Now
+
+                        ul.list-card.list-card--02
+                            - for( var i=0; i<3; i++ )
+                                li.list-card__item
+                                    a.list-card__link.list-card__link--02(href="#")
+                                        .list-card__img.list-card__img--03.img
+                                            img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
+                                        .list-card__info
+                                            h2.list-card__ttl.list-card__ttl--02 Lorem ipsum dolor sit amet
+                                            p.list-card__date.list-card__date--02 2025.4.1
+                                            .list-card__wrap
+                                                p.list-card__tag # ？？？？
+                                                p.list-card__tag # ？？？？
+                                                p.list-card__tag # ？？
+                        .btn-01
+                            a.btn-01__btn.btn-01__btn--blue(href="/menu") 
+                                | Return to menu
+        include ../_inc/_blocks/_footer.pug
+        include ../_inc/_system/_foot.pug

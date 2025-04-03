@@ -152,10 +152,7 @@ section{
 .top-about{
   background: rgb(233,178,111);
   background: linear-gradient(311deg, rgba(233,178,111,0.6362920168067228) 0%, rgba(224,143,77,0.5102415966386555) 40%, rgba(214,147,39,0.6362920168067228) 60%, rgba(213,144,39,0.6474964985994398) 100%);
-  // background: rgb(111,205,233);
-  // background: linear-gradient(315deg, rgba(111,205,233,1) 0%, rgba(77,159,224,1) 39%, rgba(39,107,214,1) 61%, rgba(39,105,213,1) 100%);
   &__info{
-    // @include m.flex($ai:center, $jc:center, $fd:column);
     text-align: center;
     padding-block:100px;
     color: m.$white;
@@ -195,8 +192,6 @@ section{
       &:hover{
         background: rgb(255,0,0);
             background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,102,0,1) 60%, rgba(255,204,0,1) 100%);
-        // background: rgb(32,89,182);
-        // background: linear-gradient(270deg, rgba(32,89,182,1) 0%, rgba(66,153,224,1) 100%);
         color:m.$white;
       }
     }

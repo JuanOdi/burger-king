@@ -18,32 +18,35 @@
     const menuData = [
         {
             img: "top-benefit_img01.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Ultimate Burger`,
+            url: './burger-page'
         }, 
         {
             img: "top-benefit_img02.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Pesto Pizza`,
+            url: 'burger-page'
+
         }, 
         {
             img: "top-menu03.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Ultimate Sandwich`,
         },
         {
             img: "top-menu04.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Sandwich`,
         },
         {
             img: "top-menu02.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Pasta`,
         },
         {
             img: "top-menu01.jpg",
-            date: "2025.4.1",
+            price: "$200",
             ttl: `Salads`,
         },
     ]
@@ -64,15 +67,12 @@ html(lang="ja")
                     ul.list-card 
                         for menuItem in menuData
                             li.list-card__item.list-card__item--03
-                                a.list-card__link(href="#")
+                                a.list-card__link(href=menuItem.url)
                                     .list-card__img.list-card__img--03.img
                                         img.img__main(src=`${assetsPath}/images/top/`+ menuItem.img, alt="")
-                                    p.list-card__date.list-card__date--02 #{menuItem.date}
+                                    p.list-card__date.list-card__date--02 #{menuItem.price}
                                     h2.list-card__ttl.list-card__ttl--03 !{menuItem.ttl}
-                                    .list-card__wrap
-                                        p.list-card__tag # ？？？？
-                                        p.list-card__tag # ？？？？
-                                        p.list-card__tag # ？？？？
+                                    a.list-card__btn(href="#") Add to Cart
                     .pagination 
                         a.page-numbers.is-active(href="#") 1
                         a.page-numbers(href="#") 2
