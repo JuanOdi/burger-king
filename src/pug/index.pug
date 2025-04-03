@@ -64,7 +64,7 @@
         },
     ]
 
-    const blogData = [
+    const menuData = [
         {
             img: "top-benefit_img01.jpg",
             date: "2025.4.1",
@@ -289,7 +289,7 @@
     //-         ans: `Zoomを使用します。そのため受講開始時までにZoomアプリのインストールをお願いいたします。`
     //-     },
     //- ]
-    
+  
 
 html(lang="ja")
     head
@@ -300,7 +300,7 @@ html(lang="ja")
 
         main.main
             //- Top Banner
-            .top-banner.relative
+            .top-banner.relative#home
                 .top-banner__bnr-img.img
                     img.img__main.hidden-sp(src=`${assetsPath}/images/top/top-bnr_bnr-img02.jpg` alt='')
                     img.img__main.hidden-pc(src=`${assetsPath}/images/top/top-bnr_bnr-img-sp.jpg` alt='')
@@ -309,7 +309,7 @@ html(lang="ja")
                     h2.top-banner__ttl Have it your Way. <br> Satisfy Your Cravings,<br> One Bite at a Time!
              
             //- Top About
-            .top-about 
+            .top-about#about 
                 .top-about__info 
                     h2.top-about__ttl About us
                     p.top-about__txt We’re more than just a burger joint—we’re passionate <br> food lovers committed to serving fresh, <br>handcrafted burgers made with premium ingredients. 
@@ -320,8 +320,6 @@ html(lang="ja")
                     .btn-01
                         a.btn-01__btn(href="#") 
                             | Read More
-                            img.btn-01__btn-arrow(src=`${assetsPath}/images/common/btn-arrow.png`, alt="")
-           
             //- Top Benefit
             section.top-seller
                 .top-seller__info
@@ -372,38 +370,34 @@ html(lang="ja")
                                 img.top-ingredients__check-img(src=`${assetsPath}/images/top/top-merit_check.png`, alt="")
                             p.top-ingredients__txt Buns: Soft, fluffy, and lightly toasted.
            
-            //- //- Top Blog
-            section.top-menu
-                
+            //- //- Top menu
+            section.top-menu#menu
                 .top-menu__info
                     .ttl-01
                         h2.ttl-01__ttl Menu
                         p.ttl-01__txt Pizza, Burger and Pasta.
                         .btn-01.hidden-sp
-                            a.btn-01__btn.btn-01__btn--blue(href="#") 
+                            a.btn-01__btn.btn-01__btn--blue(href="/menu") 
                                 | MORE
-                                img.btn-01__btn-arrow(src=`${assetsPath}/images/common/arrow-white.png`, alt="")
                     .top-menu__swiper02-con 
                         .top-menu__swiper02.swiper
                             .top-menu__swiper02-wrapper
-                                each blogItem in blogData
+                                each menuItem in menuData
                                     .top-menu__swiper02-slide
                                         a.top-menu__swiper02-link(href="#")
                                             .top-menu__swiper02-img.img
-                                                img.img__main(src=`${assetsPath}/images/top/`+ blogItem.img, alt="")
-                                            p.top-menu__swiper02-date #{blogItem.date}
-                                            h2.top-menu__swiper02-ttl !{blogItem.ttl}
+                                                img.img__main(src=`${assetsPath}/images/top/`+ menuItem.img, alt="")
+                                            p.top-menu__swiper02-date #{menuItem.date}
+                                            h2.top-menu__swiper02-ttl !{menuItem.ttl}
                                             .top-menu__swiper02-wrap
-                                                p.top-menu__swiper02-cat #{blogItem.cat}
-                                                p.top-menu__swiper02-cat #{blogItem.cat}
-                                                p.top-menu__swiper02-cat #{blogItem.cat}
+                                                p.top-menu__swiper02-cat #{menuItem.cat}
+                                                p.top-menu__swiper02-cat #{menuItem.cat}
+                                                p.top-menu__swiper02-cat #{menuItem.cat}
                     .btn-01.hidden-pc
-                        a.btn-01__btn.btn-01__btn--blue(href="#") 
+                        a.btn-01__btn.btn-01__btn--blue(href="/menu") 
                             | MORE
-                            img.btn-01__btn-arrow(src=`${assetsPath}/images/common/arrow-white.png`, alt="")
-            
 
-            section.top-location 
+            section.top-location#location 
                 .ttl-01.ttl-01--left
                     h2.ttl-01__ttl.ttl-01__ttl--white Locations
                     p.ttl-01__txt All branches
@@ -416,6 +410,7 @@ html(lang="ja")
                                     .top-location__wrap 
                                         h2.top-location__ttl(class="top-location__ttl--"+locationItem.class) !{locationItem.ttl}
                                         p.top-location__txt(class="top-location__txt--"+locationItem.class) !{locationItem.txt}.
+           
             //- //- Top Program
             //- section.top-program 
             //-     .container

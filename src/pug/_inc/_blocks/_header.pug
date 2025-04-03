@@ -1,16 +1,9 @@
 -
     const headerMenu = [
-        { name: 'Home', href: `${relativePath}/` },
-        { name: 'About', href: "#" },
-        { name: 'Menu', href: "#" },
-        { name: 'Essence', href: "#" },
-        //- { name: 'Voice', href: "#" },
-        //- { name: 'Strength', href: "#" },
-        //- { name: 'Blog', href: "#" },
-        //- { name: 'Program', href: "#" },
-        //- { name: 'Course', href: "#" },
-        //- { name: 'FAQ', href: "#" },
-        //- { name: 'まずは無料体験に申し込む', href: "#" },
+        { name: 'Home', href: isHomePage ? "#" : `${relativePath}/` },
+        { name: 'About', href: `#about` },
+        { name: 'Menu', href: "#menu" },
+        { name: 'Location', href: "#location" },
     ]
     const headerSp = [
         {

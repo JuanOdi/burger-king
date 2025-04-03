@@ -6,13 +6,14 @@ import { swiperJS } from "./modules/_swiper";
 import { tabs } from "./modules/_tabs";
 import {gsapBenefits,gsapTtl,gsapList,gsapLocation} from "./lib/_gsap";
 import { marquee } from "./modules/_marquee";
+import { headerLink } from "./modules/_headerLink";
 $( function() {
   
   // General
   anchorLink();
   headerScroll();
   menuOpen.init();
-  
+  headerLink();
   // Layouts
   accordion();
   tabs();

@@ -17,7 +17,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   overscroll-behavior: none;
-
+  overflow: visible !important;
   &.is-menu-opened {
     overflow-y: hidden;
   }
@@ -33,6 +33,7 @@ body {
   font-family: m.$font-primary;
   line-height: m.calculate_lh(16, 24);
   overflow-x: hidden;
+  overflow: visible !important;
   overscroll-behavior: none;
 }
 

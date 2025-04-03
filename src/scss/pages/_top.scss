@@ -3,6 +3,9 @@
 **********************************/
 @use "../modules" as m;
 
+section{
+  scroll-margin-top: 80px
+}
 /* Banner */
 .span-blue{
   background: rgb(104,194,230);
@@ -379,12 +382,16 @@
 }
 
 .top-menu{
-  padding-block: 0 80px;
   position: relative;
+  .btn-01{
+    &__btn{
+      // padding-right:25px ;
+      padding: 10px 25px 10px 15px;
+    }
+  }
   &__engTxt-wrap{
     @include m.flex($gap:40px);
     position: absolute;
-    // max-width: 100%;
     left:0;
     top:-35px;
     z-index: 2;
@@ -393,10 +400,6 @@
     background: url("../images/top/swiper_img-txt.png") repeat-x center / contain;
   
   }
-  // &__engTxt{
-  //   width: 100%;
-  //   max-width: 940px;
-  // }
 
   &-bnr{
     &__swiper{
@@ -419,23 +422,6 @@
     max-width: unset;
     padding-left: unset;
   }
-  // .btn-01{
-  //   margin-top:38px;
-  //   background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
-  //     -webkit-background-clip: text;
-  //     -webkit-text-fill-color: transparent;
-  //   &__btn{
-  //     font-size:1.4rem;
-  //     line-height: m.calculate_lh(14, 30);
-  //     padding:10px 11px 10px 33px;
-      
-  //   }
-  //   &__btn--blue {
-  //     background: rgb(255,0,0);
-  //     background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,102,0,1) 60%, rgba(255,204,0,1) 100%);
-  //     color:m.$white;
-  //   }
-  // }
 
   &__info{
     @include m.flex($fd:row-reverse,$ai:flex-start,$jc:space-between);

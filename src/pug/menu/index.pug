@@ -1,5 +1,5 @@
 //- META INFORMATION
-- const page_title = 'LCP'
+- const page_title = 'Burger King PH'
 - const relativePath = '../..'
 - const assetsPath = relativePath + '/_assets'
 - const meta_title = 'this is meta title'
@@ -15,7 +15,38 @@
 
 //- CONTENT DATA
 -
-   
+    const menuData = [
+        {
+            img: "top-benefit_img01.jpg",
+            date: "2025.4.1",
+            ttl: `Ultimate Burger`,
+        }, 
+        {
+            img: "top-benefit_img02.jpg",
+            date: "2025.4.1",
+            ttl: `Pesto Pizza`,
+        }, 
+        {
+            img: "top-menu03.jpg",
+            date: "2025.4.1",
+            ttl: `Ultimate Sandwich`,
+        },
+        {
+            img: "top-menu04.jpg",
+            date: "2025.4.1",
+            ttl: `Sandwich`,
+        },
+        {
+            img: "top-menu02.jpg",
+            date: "2025.4.1",
+            ttl: `Pasta`,
+        },
+        {
+            img: "top-menu01.jpg",
+            date: "2025.4.1",
+            ttl: `Salads`,
+        },
+    ]
 
 html(lang="ja")
     head
@@ -26,34 +57,18 @@ html(lang="ja")
 
         main.main
 
-            .lp-bnr 
-                .lp-bnr__info.relative
-                    .lp-bnr__wrap-img
-                        .lp-bnr__img.img 
-                            img.img__main.hidden-sp(src = `${assetsPath}/images/banner/lp-bnr_img01.jpg`)
-                            img.img__main.hidden-pc(src = `${assetsPath}/images/banner/lp-bnr_img01-sp.jpg`)
-                        .lp-bnr__img.img 
-                            img.img__main.hidden-sp(src = `${assetsPath}/images/banner/lp-bnr_img02.jpg`)
-                            img.img__main.hidden-pc(src = `${assetsPath}/images/banner/lp-bnr_img02-sp.jpg`)
-                    p.lp-bnr__txt 人生は一度きり。「もしも」はない。
-                    h2.lp-bnr__ttl.hidden-sp 
-                        | Blog 
-                        span ブログ記事
-                    img.lp-bnr__img-txt(src = `${assetsPath}/images/banner/lp-bnr_imgtxt.png`)
-            
-            section.voice 
+            section.menu 
                 .container
-                    .ttl-01.hidden-pc
-                        h2.ttl-01__ttl Voice
-                        p.ttl-01__txt 受講生の声
+                    .lp-menu
+                        h2.lp-menu__ttl Menu
                     ul.list-card 
-                        - for (let i = 0; i < 9; i++)
+                        for menuItem in menuData
                             li.list-card__item.list-card__item--03
                                 a.list-card__link(href="#")
                                     .list-card__img.list-card__img--03.img
-                                        img.img__main(src=`${assetsPath}/images/top/empty.jpg`, alt="")
-                                    p.list-card__date.list-card__date--02 2025.4.1
-                                    h2.list-card__ttl.list-card__ttl--03 Lorem ipsum dolor sit amet
+                                        img.img__main(src=`${assetsPath}/images/top/`+ menuItem.img, alt="")
+                                    p.list-card__date.list-card__date--02 #{menuItem.date}
+                                    h2.list-card__ttl.list-card__ttl--03 !{menuItem.ttl}
                                     .list-card__wrap
                                         p.list-card__tag # ？？？？
                                         p.list-card__tag # ？？？？
